@@ -8,3 +8,5 @@ test_accuracy
 ![train_loss](https://github.com/SamHara/ResNet18/blob/master/bbccz-u40db.png)
 
 train_loss
+
+The results above only use one learning rate 1e-3.
