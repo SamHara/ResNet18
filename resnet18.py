@@ -162,8 +162,8 @@ def main():
         for step, (x,y) in enumerate(train_db):
             loss=train_loss(x,y)
 
-            with summary_writer.as_default(): # 写入环境
-                # 当前时间戳step 上的数据为loss，写入到名为train-loss 数据库中
+            with summary_writer.as_default(): 
+             
                 tf.summary.scalar('train-loss', float(loss), step=step+epoch*total_step)
 
             if step % 50 == 0:
@@ -191,8 +191,8 @@ def main():
         acc = total_correct / total_num
         print(epoch, 'acc:', acc)
 
-        with summary_writer.as_default(): # 写入环境
-            # 当前时间戳step 上的数据为loss，写入到名为train-loss 数据库中
+        with summary_writer.as_default(): 
+            
             tf.summary.scalar('test_acc', float(acc), step=epoch)
 
         tf.saved_model.save(model, 'model_savedmode')
